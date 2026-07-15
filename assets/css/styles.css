@@ -2,50 +2,311 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    --header-height: 50px;
 }
 
 html {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-#main {
-    background-color: #f4f4f4;
-}
-
-#header {
+.header {
     background-color: black;
-    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: var(--header-height);
+    z-index: 1;
 }
 
-#nav {}
-
-#nav li {
-    display: inline-block;
+.text-white {
+    color: white !important;
 }
 
-#nav li a {
-    color: white;
+.nav {
+    list-style: none;
+    display: flex;
+    height: 100%;
+}
+
+.nav>li {
+    position: relative;
+}
+
+.nav li a {
     text-decoration: none;
-    line-height: 40px;
-    padding: 16px;
+    color: white;
+    display: flex;
+    padding: 15px 20px;
+    height: 100%;
 }
 
-#nav li:hover a {
-    background-color: white;
-    color: black
+.nav>li:hover>a {
+    background-color: #ccc;
+    color: black;
 }
 
-#nav .subnav {
+.subnav {
     display: none;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.subnav {}
-
-#slider {
-    height:300px;
-    background-color:aquamarine
+.subnav li a {
+    color: black;
 }
 
-#content {}
+.subnav>li:hover a {
+    background-color: #ccc;
+}
 
-#footer {}
+.nav li:hover .subnav {
+    display: block;
+    position: absolute;
+    list-style: none;
+    top: 100%;
+}
+
+.btn-search {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.btn-search:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.slider {
+    background-color: #ccc;
+    margin-top: var(--header-height);
+    padding-top: 50%;
+    background-image: url("https://cdn-media.sforum.vn/storage/app/media/wp-content/uploads/2024/02/anh-thien-nhien-Thumbnail.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-top: var(--header-height);
+}
+
+.slider_text {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 40px;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.slider_text .title {
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.slider_text .sub_title {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.section {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.section-heading {
+    text-align: center;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.section-sub-heading {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.about-text {
+    text-align: justify;
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+.members-list {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.member-item {
+    text-align: center;
+}
+
+.member-image {
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 60%;
+}
+
+.tour-section {
+    background-color: black;
+}
+
+.tickers-list {
+    background-color: white;
+    list-style: none;
+    margin-top: 40px;
+}
+
+.ticker-sold-out {
+    background-color: red;
+    color: white;
+    margin-left: 15px;
+    padding: 4px;
+}
+
+.ticket-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.ticket-month {
+    color: black;
+    opacity: 0.6;
+}
+
+.ticker-quantity {
+    background-color: black;
+    color: white;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.space-beet-ween {
+    justify-content: space-between;
+}
+
+.buy-tickets-list {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buy-ticket-item {
+    width: 32%;
+    background-color: white;
+    padding-bottom: 16px;
+}
+
+.buy-ticket-item-image {
+    width: 100%;
+}
+
+.buy-ticket-item-city {
+    margin-top: 10px;
+    margin-top: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.buy-ticket-item-date {
+    margin-top: 10px;
+    margin-top: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+    opacity: 0.6;
+}
+
+.buy-ticket-item-des {
+    margin-top: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+
+.buy-ticket-item-button {
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 10px 16px;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.contect-info-item {
+    display: flex;
+    gap: 8px;
+}
+
+
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-row1 {
+    display: flex;
+    gap: 10px;
+}
+
+.input {
+    padding: 10px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.btn-send {
+    background-color: black;
+    color: white;
+    align-self: flex-end;
+    padding: 10px 16px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+}
+
+.section-map {
+    background-color: aqua;
+    background-image: url(/assets/images/map.jpg);
+    padding-top: 50%;
+    filter: grayscale(50%);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer {
+    background-color: rgb(18, 130, 228);
+    height: 300px;
+}
