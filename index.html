@@ -189,8 +189,99 @@
         </div>
 
         <div class="footer">
-            
+
         </div>
+
+
+        <div class="modal">
+
+            <div class="modal-container">
+
+
+
+
+                <header class="modal-header">
+
+                    <span class="modal-title">
+                        <i class="fi fi-br-briefcase"></i>
+                        <span>Tickets</span>
+                    </span>
+
+
+
+                    <i class="fi fi-rs-circle-xmark modal-close"></i>
+
+
+                </header>
+
+
+                <div class="modal-body">
+
+                    <label for="" class="modal-label">
+                        <i class="fi fi-rr-shopping-cart"></i>
+                        Tickets, $15 per person
+                    </label>
+
+                    <input type="text" placeholder="How many?">
+
+                    <label for="" class="modal-label">
+                        <i class="fi fi-rr-shopping-cart"></i>
+                        Send To
+                    </label>
+
+                    <input type="text" placeholder="Enter email">
+
+                    <button class="modal-btn">PAY <i class="fi fi-br-check"></i></button>
+
+
+                    <div class="modal-footer">
+
+
+
+                        <button class="modal-footer-close">
+                            Close
+                            <i class="fi fi-br-cross-small"></i>
+                        </button>
+
+
+                        <div class="modal-footer-needhelp">
+                            Need <a href="">help?</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
 </body>
+
+<script>
+    const btns = document.querySelectorAll('.buy-ticket-item-button')
+    const modal = document.querySelector('.modal')
+    const modalClose = document.querySelector('.modal-close')
+    const modalFooterClose = document.querySelector('.modal-footer-close')
+
+    for (const btn of btns) {
+        btn.addEventListener('click', showModal)
+    }
+
+    modalClose.addEventListener('click', hideModal)
+    modalFooterClose.addEventListener('click', hideModal)
+    function showModal() {
+        modal.classList.add('open')
+    }
+    function hideModal() {
+        modal.classList.remove('open')
+    }
+
+    modal.addEventListener('click', function (event) {
+        modal.classList.remove('open')
+        event.stopPropagation()
+    })
+
+</script>
 
 </html>

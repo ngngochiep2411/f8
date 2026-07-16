@@ -91,6 +91,7 @@ html {
     background-position: center;
     background-size: cover;
     position: relative;
+    /* width: 100%; */
     margin-top: var(--header-height);
 }
 
@@ -309,4 +310,128 @@ html {
 .footer {
     background-color: rgb(18, 130, 228);
     height: 300px;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    animation: slideIn ease 0.5s;
+}
+
+.modal-container {
+    background-color: #fff;
+    width: 80%;
+    min-height: 200px;
+}
+
+.modal-header {
+    background-color: #009688;
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
+    justify-content: center;
+}
+
+.modal-title {
+    align-self: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    gap: 30px;
+    display: flex;
+    gap: 16px;
+}
+
+.modal-close {
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-label {
+    color: black;
+    font-size: 15px;
+}
+
+.modal-body input {
+    padding: 10px;
+}
+
+.modal-btn {
+    background-color: #009688;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 10px;
+    padding: 20px 0px;
+    cursor: pointer;
+}
+
+.modal-btn:hover {
+    opacity: 0.5;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-footer-close {
+    border: 0;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    background-color: red;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 5px;
+}
+
+.modal-footer-close i {
+    display: inline-flex;
+    /* Đưa icon về dạng flex nhỏ để triệt tiêu baseline */
+    align-items: center;
+    /* Căn giữa chính xác hình vẽ icon bên trong */
+    line-height: 1;
+    /* Triệt tiêu khoảng trống thừa của dòng */
+}
+
+.open {
+    display: flex;
+}
+
+@keyframes slideIn {
+    from {
+        /* Trạng thái bắt đầu */
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+
+    to {
+        /* Trạng thái kết thúc */
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
