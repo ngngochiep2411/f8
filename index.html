@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css" rel="stylesheet">
 </head>
 
@@ -39,6 +40,7 @@
                 <i class="fi fi-bs-search"></i>
             </div>
 
+            <i class="fi fi-br-menu-burger btn-menu"></i>
 
         </div>
 
@@ -157,25 +159,29 @@
                 <p class="section-sub-heading">Fan? Drop a note!</p>
 
 
-                <div class="contact">
+                <div class="contact-section">
                     <div class="contact-info">
                         <span class="contect-info-item"><i class="fi fi-sr-marker"></i>Chicago, US</span>
                         <span class="contect-info-item"><i class="fi fi-sr-phone-flip"></i>Phone: +00 151515</span>
                         <span class="contect-info-item"><i class="fi fi-br-envelope"></i>Email: mail@mail.com</span>
                     </div>
 
-                    <div class="contact-form">
+                    <form action="">
+                        <div class="contact-form">
 
-                        <div class="input-row1">
-                            <input class="input" type="text" placeholder="Name">
-                            <input class="input" type="email" placeholder="Email">
+
+
+
+                            <div class="input-row1">
+                                <input required class="input" type="text" placeholder="Name">
+                                <input required class="input" type="email" placeholder="Email">
+                            </div>
+
+                            <input class="input" type="text" placeholder="Message">
+                            <button class="btn-send">SEND</button>
+
                         </div>
-
-                        <input class="input" type="text" placeholder="Message">
-                        <button class="btn-send">SEND</button>
-
-                    </div>
-
+                    </form>
                 </div>
 
 
@@ -190,6 +196,12 @@
 
         <div class="footer">
 
+            <i class="fi fi-brands-facebook"></i>
+            <i class="fi fi-brands-instagram"></i>
+            <i class="fi fi-brands-tik-tok"></i>
+            <i class="fi fi-brands-twitter-alt"></i>
+            <i class="fi fi-brands-youtube"></i>
+            <i class="fi fi-brands-twitter"></i>
         </div>
 
 
@@ -263,6 +275,11 @@
     const modal = document.querySelector('.modal')
     const modalClose = document.querySelector('.modal-close')
     const modalFooterClose = document.querySelector('.modal-footer-close')
+    const btnMobileMenu = document.querySelector('.btn-menu')
+    const nav = document.querySelector('.nav')
+    const headerHeight = document.querySelector('.header').clientHeight
+
+    const header = document.querySelector('.header')
 
     for (const btn of btns) {
         btn.addEventListener('click', showModal)
@@ -280,6 +297,15 @@
     modal.addEventListener('click', function (event) {
         modal.classList.remove('open')
         event.stopPropagation()
+    })
+
+    btnMobileMenu.addEventListener('click', function () {
+
+        if (header.clientHeight === headerHeight) {
+            header.style.height = 'auto';
+        } else {
+            header.style.height = headerHeight + 'px';
+        }
     })
 
 </script>

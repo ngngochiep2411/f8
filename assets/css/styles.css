@@ -10,6 +10,10 @@ html {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+.main {
+    width: 100%;
+}
+
 .header {
     background-color: black;
     display: flex;
@@ -34,6 +38,7 @@ html {
 
 .nav>li {
     position: relative;
+    display: flex;
 }
 
 .nav li a {
@@ -77,6 +82,15 @@ html {
     padding: 0px 20px;
 }
 
+.btn-menu {
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: 10px;
+    display: none;
+    padding: 10px;
+}
+
 .btn-search:hover {
     background-color: red;
     cursor: pointer;
@@ -115,11 +129,9 @@ html {
 }
 
 .section {
-    width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding: 60px 60px;
 }
 
 .section-heading {
@@ -144,12 +156,12 @@ html {
 .members-list {
     margin-top: 40px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
 .member-item {
     text-align: center;
+    width: 32%;
 }
 
 .member-image {
@@ -255,7 +267,6 @@ html {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 20px;
 }
 
 .contect-info-item {
@@ -265,16 +276,18 @@ html {
 
 
 
-.contact {
+.contact-section {
     display: flex;
-    justify-content: space-between;
     margin-top: 40px;
+    gap: 80px;
+    justify-content: center;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    justify-content: center;
 }
 
 .input-row1 {
@@ -299,17 +312,12 @@ html {
 }
 
 .section-map {
-    background-color: aqua;
     background-image: url(/assets/images/map.jpg);
     padding-top: 50%;
     filter: grayscale(50%);
     background-repeat: no-repeat;
     background-position: center;
-}
-
-.footer {
-    background-color: rgb(18, 130, 228);
-    height: 300px;
+    background-size: cover;
 }
 
 .modal {
@@ -418,8 +426,28 @@ html {
     /* Triệt tiêu khoảng trống thừa của dòng */
 }
 
+.footer {
+    display: flex;
+    gap: 10px;
+    padding: 50px 0px;
+    justify-content: center;
+
+}
+
+.footer i {
+    color: black;
+}
+
+.footer i:hover {
+    opacity: 0.7;
+}
+
 .open {
     display: flex;
+}
+
+.close {
+    display: none;
 }
 
 @keyframes slideIn {
